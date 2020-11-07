@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Taller 4</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script>
+    var cadena = prompt("Introduzca un número binario");
+
+document.write(cadena + "<br></br>");
+
+var indice = cadena.length - 1;
+var i = 0;
+while( i < cadena.length){
+  document.write( indice + " ");
+  indice = indice - 1;
+  i = i + 1;
+}
+
+document.write("<br></br>FINALIZADO");
+    </script>
+  </body>
+</html>

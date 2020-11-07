@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Base 16</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script>
+        // FUNCIONES DE APOYO
+function texto( cadena, numero_saltos = 0 ) {
+  document.write( cadena );
+  var i = 0;
+  while ( i < numero_saltos ) {
+    document.write( "<br/> ");
+    i = i + 1;
+  }
+}
+
+// PROGRAMA PRINCIPAL
+function conversion ( numero, base) {
+  var control = 0;
+  var division, resto;
+  var resultado = "";
+  var bandera = 0;
+  while (bandera == 0) {
+    division = Math.trunc( numero / base );
+    resto = numero - Math.trunc( numero / base ) * base;
+
+    if (base == 16 && resto > 9 ) {
+      var aux = "";
+      switch (resto) {
+        case 10:
+          aux = "A";
+          break;
+        case 11:
+          aux = "B";
+          break;
+        case 12:
+          aux = "C";
+          break;
+        case 13:
+          aux = "D";
+          break;
+        case 14:
+          aux = "E";
+          break;
+        case 15:
+          aux = "F";
+          break;
+        default:
+          aux = "";
+          break;
+      }
+      resultado = aux + resultado + " ";
+    }
+    else {
+      resultado = resto.toString() + resultado + " ";
+    }
+
+    numero = division;
+
+    if ( division < 1 )
+      bandera = 1;
+
+    control = control + 1;
+    if (control > 1000) {
+      texto( "ERROR. Se superó el número de 1000 iteraciones", 1 );
+      bandera = 1;
+    }
+  }
+
+  return resultado;
+}
+
+// EJECUCIÓN DEL PROGRAMA
+var n = 175;
+var b = 16;
+
+var resp = conversion( n, b );
+
+texto( "Número: " + n, 1);
+texto( "Conversión a base: " + b, 1);
+texto( "Resultado: " + resp, 2);
+
+// PROGRAMA TERMINADO
+texto("PROGRAMA FINALIZADO!", 1 );
+texto("Octubre 22 de 2020");
+    </script>
+  </body>
+</html>

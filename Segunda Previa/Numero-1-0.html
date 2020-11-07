@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Taller 2</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script>
+    var cadena = prompt("Introduzca un número binario");
+
+var salida0 = "";
+var salida1 = "";
+
+var i = 0;
+var a = 0;
+var b = 0;
+
+while(i < cadena.length ){
+
+  if(cadena.charAt(i) === "0"){
+  a = a + 1;
+  }
+
+  if(cadena.charAt(i) === "1"){
+  b = b +1;
+  }
+
+  salida0 = a;
+  salida1 = b;
+  i = i + 1;
+}
+
+document.write("Cadena = " + cadena + "<br></br>");
+
+document.write("Número de ceros = " + salida0 + "<br></br>");
+
+document.write("Número de unos = " + salida1 + "<br></br>");
+
+document.write("FINALIZADO");
+    </script>
+  </body>
+</html>
